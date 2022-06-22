@@ -1,0 +1,54 @@
+﻿@model Projeto.Presentation.Models.ClienteEmpresaExclusaoViewModel
+
+@{
+    ViewBag.Title = "Exclusao";
+    Layout = "~/Areas/AreaRestrita/Views/Shared/Layout.cshtml";
+}
+
+<h4>Atualizar dados de Cliente</h4>
+<a href="/ClienteEmpresa/ListaEmpresa" class="btn btn-info">
+    Voltar para a consulta
+</a>
+<br />
+<br />
+
+@using (Html.BeginForm("ExcluirCliente", "ClienteEmpresa", FormMethod.Post))
+{
+    <!-- campo oculto -->
+    @Html.HiddenFor(model => model.IdClienteCnpj)
+
+    <div class="text-danger">
+        @Html.ValidationSummary()
+    </div>
+
+    <label>Email do Cliente:</label>
+    @Html.TextBoxFor(model => model.Email,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Email"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Email)
+    </span>
+    <br />
+
+    <label>Cpf do Cliente:</label>
+    @Html.TextBoxFor(model => model.Cnpj,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Cpf"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Cnpj)
+    </span>
+    <br />
+
+    <input type="submit" value="Excluir Cliente"
+           class="btn btn-primary" />
+        <br />
+        <br />
+
+        <strong>@ViewBag.Mensagem</strong>
+}

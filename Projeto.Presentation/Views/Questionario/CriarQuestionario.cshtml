@@ -1,0 +1,356 @@
+﻿@model Projeto.Presentation.Models.QuestionarioCadastroViewModel
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Questionário</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="~/Scripts/scss/main.css" rel="stylesheet" />
+    <link href="~/Scripts/scss/skin.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/script/index.js"></script>
+    <script>
+        function marcaDesmarca(caller) {
+            var checks = document.querySelector('input[type="checkbox"]');
+            for (let i = 0; i < checks.length; i++) {
+                checks[i].checked = checks[i] == caller;
+            }
+        }
+
+    </script>
+    <script>
+        function marcaDesmarca2(caller) {
+            var checks = document.querySelector('input[type="checkbox"]');
+            for (let i = 0; i < checks.length; i++) {
+                checks[i].checked = checks[i] == caller;
+            }
+        }
+
+    </script>
+</head>
+
+<body id="wrapper">
+
+    <section id="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 top-header-links">
+                    <ul class="contact_links">
+                        <li><i class="fa fa-phone"></i><a href="#">+21 1111 1111</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="#">spdfprojeto@gmail.com</a></li>
+                    </ul>
+                </div>
+             
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    @*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>*@
+                    <a class="navbar-brand" href="#">
+                        <h1>SPDS</h1><span>Pesquisa e Satisfação</span>
+                    </a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/Home/Index"">Home</a></li>
+                        @*<li><a href="features.html">Features</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>*@
+                        @*<li><a href="/Questionario/CriarQuestionario">Questionário</a></li>*@
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="/ClienteEmpresa/Autenticar">Login</a></li>
+                        <li><a href="/ClienteEmpresa/CriarConta"> Cadastro</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!--/.nav-ends -->
+    </header>
+
+    <section id="top_banner">
+        <div class="banner">
+            <div class="inner text-center">
+                <h2></h2>
+            </div>
+        </div>
+    </section>
+
+
+@using (Html.BeginForm("QuestionarioPergunta", "Questionario", FormMethod.Post))
+{
+    <section id="login-reg">
+        <div class="container">
+            <!-- Top content -->
+            <div class="row">
+            
+                <!--forms-right-icons-->
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Questionário</h3>
+                                <p>Preencha o Questionário Abaixo</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-pencil"></i>
+                            </div>
+                        </div>
+                        @ViewBag.Mensagem
+                        <div class="form-bottom">
+                            <form role="form" action="" class="login-form">
+                                <div class="input-group form-group">
+                                    @*<label for="fname"> Cpf:</label>
+                                    <input type="text" id="CpfQuestionario" name="CpfQuestionario"><br><br>*@
+                                    <span class="input-group-addon" id="CpfQuestionario"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" placeholder="CPF" name="CpfQuestionario" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="input-group form-group">
+                                    <span class="input-group-addon" id="CpfQuestionario"><i class="fa fa-envelope"></i></span>
+                                    <input type="text" class="form-control" placeholder="Email" name="EmailQuestionario" aria-describedby="basic-addon1">
+                                </div>
+                                @*<div class="input-group form-group">
+                                    <span class="input-group-addon" id="basic-addon1"></span>
+                                    <input type="tel" class="form-control" placeholder="Phone No." aria-describedby="basic-addon1">
+                                </div>*@
+
+                                <div class="input-group form-group">
+
+                                    <p>
+                                        1- Avaliando a qualidade do seu produto:
+                                        Em relação ao tecido e costura da sua roupa, os mesmos condizem com o apresentado na loja física e no site? Tecido de qualidade e costura bem precisa?<br />
+                                        Classificação:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao1" value="1" checked>Ruim
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao1" value="2" />Razoável
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao1" value="3" />Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao1" value="4" />Muito Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao1" value="5" />Excelente
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <div class="input-group form-group">
+                                    <p>
+                                        2- Avaliando a entrega do seu produto:
+                                        O tempo de entrega condiz com o informado no tempo do frete indicado?
+                                        <br />
+                                        Classificação:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <input id="chk2" TYPE="radio" name="RdQuestao2" value="1" checked />Ruim
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao2" value="2" />Razoável
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao2" value="3" />Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao2" value="4" />Muito Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao2" o value="5" />Excelente
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <div class="input-group form-group">
+                                    <p>
+                                        3- Avalie o tempo de entrega do seu produto e a qualidade, para ruim caso ultrapassou a 7 dias,
+                                        razoável se teve problemas com a entrega, bom se foi entregue no prazo mas com contratempos,
+                                        muito bom se foi entregue no prazo de 7 dias, e excelente se chegou antes do prazo.
+                                        <br />
+                                        Classificação:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <input id="chk3" TYPE="radio" name="RdQuestao3" value="1" checked />Ruim
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao3" value="2" />Razoável
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao3" value="3" />Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao3" value="4" />Muito Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao3" value="5" />Excelente
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div class="input-group form-group">
+                                    <p>
+                                        4- Avaliando o atendimento:
+                                        Caso tenha sido atendido em uma loja presencial, os
+                                        vendedores informaram os detalhes da peça e tiraram todas as dúvidas caso necessário?
+
+                                        <br />
+                                        Classificação:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <input id="chk4" TYPE="radio" name="RdQuestao4" value="1" checked />Ruim
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao4" value="2" />Razoável
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao4" value="3" />Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao4" value="4" />Muito Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao4" value="5" />Excelente
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+
+                                <div class="input-group form-group">
+                                    <p>
+                                        5- Caso tenha comprado on-line, o chat para tirar dúvidas e o SAC foi pró ativo e resolutivo nas ajudas?
+
+                                        <br />
+                                        Classificação:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <input id="chk5" TYPE="radio" name="RdQuestao5" value="1" checked />Ruim
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao5" value="2" />Razoável
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao5" value="3" />Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao5" value="4" />Muito Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao5" value="5" />Excelente
+                                        </li>
+                                    </ul>
+
+
+
+                                </div>
+                                <div class="input-group form-group">
+                                    <p>
+                                        6 - Sobre a sua experiência em nosso site
+                                        Caso tenha comprado online, ou até mesmo entrado para conhecer melhor a nossa loja,
+                                        oque achou da nossa interface com o usuário? Está comunicativa e boa visualmente?
+                                        Está fácil para encontrar as peças que precisa?
+                                        <br />
+                                        Classificação:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <input id="chk6" TYPE="radio" name="RdQuestao6" value="1" checked />Ruim
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao6" value="2" />Razoável
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao6" value="3" />Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao6" value="4" />Muito Bom
+                                        </li>
+                                        <li>
+                                            <input TYPE="radio" name="RdQuestao6" value="5" />Excelente
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+
+                                    <div class="input-group form-group">
+                                        <p>
+                                            7 - Avaliando aspecto em geral da loja: <br />
+                                            Peço que deixe abaixo o que quiser para que assim possamos melhorar,
+                                            dar uma boa sensação de compra ou até mesmo um elogio. Conto com você!
+                                            (Essa avaliação pode ser anônima, clique no botão abaixo se preferir)
+                                            <br />
+                                            Classificação:
+                                        </p>
+
+                                        <textarea name="RdQuestao7" id="RdQuestao7" required="required" class="form-control" rows="8"></textarea>
+
+                                      
+
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Cadastrar Questionário</button>
+                                
+                                @*<input type="submit" value="Cadastro Questionário" class="btn btn-success" />*@
+</form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+    </section>
+             }
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12 block">
+                   
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="bottom-footer">
+       
+    </section>
+    <div id="panel">
+        <div id="panel-admin">
+            <div class="panel-admin-box">
+               
+            </div>
+
+        </div>
+        @*<a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>*@
+    </div>
+
+</body>
+
+</html>

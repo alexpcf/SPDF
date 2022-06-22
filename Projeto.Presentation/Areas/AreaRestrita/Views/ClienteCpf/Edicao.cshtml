@@ -1,0 +1,77 @@
+﻿@model Projeto.Presentation.Areas.AreaRestrita.Models.ClienteCpfViewModel
+@{
+    ViewBag.Title = "Edicao";
+    Layout = "~/Areas/AreaRestrita/Views/Shared/Layout.cshtml";
+}
+
+<h2>Edicao</h2>
+<a href="/AreaRestrita/ClienteCpf/Consulta" class="btn btn-info">
+    Voltar para a consulta
+</a>
+<br />
+<br />
+
+@using (Html.BeginForm("AtualizarClienteCpf", "ClienteCpf", FormMethod.Post))
+{
+    <!-- campo oculto -->
+    @Html.HiddenFor(model => model.IdClienteCpf)
+
+    <div class="text-danger">
+        @Html.ValidationSummary()
+    </div>
+
+    <label>Email do Cliente:</label>
+    @Html.TextBoxFor(model => model.Email,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Email"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Email)
+    </span>
+    <br />
+
+    <label>Cpf do Cliente:</label>
+    @Html.TextBoxFor(model => model.Cpf,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Cpf"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Cpf)
+    </span>
+    <br />
+
+    <label>Cpf do Cliente:</label>
+    @Html.TextBoxFor(model => model.NomeClienteCpf,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Cpf"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.NomeClienteCpf)
+    </span>
+    <br />
+
+    <label>Cpf do Cliente:</label>
+    @Html.TextBoxFor(model => model.Estado,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Cpf"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Estado)
+    </span>
+    <br />
+
+    <input type="submit" value="Atualizar Cliente"
+           class="btn btn-primary" />
+        <br />
+        <br />
+
+        <strong>@ViewBag.Mensagem</strong>
+}

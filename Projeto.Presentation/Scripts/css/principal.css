@@ -1,0 +1,232 @@
+/*---------Resets---------*/
+*{padding:0;margin:0;}
+ul{padding:0;margin:0;list-style:none;}
+img {border:none;}
+/*--------Fontes e Links-------*/
+html, body{
+	font-family: Arial;
+	font-size:14px;
+	color:#666;
+	height:100%;
+}
+
+a:link{color: #003399;text-decoration:none;}
+a:visited{color: #003399;text-decoration:none;}
+a:hover{text-decoration:underline;color: #f60;}
+a:active{color: #003399;text-decoration:none;}
+
+input[type="text"],input[type="password"], select{margin:0 0 5px 5px;border:1px solid #ccc;border-top:1px solid #999;font-size:14px;padding:2px;border-radius:3px;}
+input[type="submit"] { cursor:pointer;float:none;}
+/*---Perfumaria--*/
+*::-moz-selection {background:#F6842E;color:#FFF;}
+*::selection {background:#F6842E;color:#FFF;}
+/*-----Layouts Principais-----*/
+#tudo{min-height:100%;width:100%;position:relative;}
+#topo{height:auto;background-color:#fff; border-bottom:solid;border-bottom-width:1px;border-bottom-color:#CCC;}
+#topo-cabecalho{height: 110px;width: 960px;padding:0;margin: 0 auto;}
+#topo-logo{margin-top:10px;width:355px;height:85px;float:left;}
+#topo-contato-e-cadastro{width:320px;height:80px;float:left;margin:20px 0 0 40px;}
+#topo-contato{height:30px;color:#999;font-size:16px;padding:5px 0 12px 0;}
+#topo-cadastrese{height:30px;}
+
+.topo-cadastrese-btn{background-image:url('../img/layout/cadastre-se-topo_s1.png');background-repeat:no-repeat;background-position:top;color:white;height:auto;margin:7px 0 0 80px;float:left;width:100px;height:25px;padding:5px 0 0 25px;}
+.topo-cadastrese-btn:hover{background-image: url('../img/layout/cadastre-se-topo_s2.png');}
+.topo-cadastrese-btn a{color:#fff;}
+
+.btn-teste-home {background-image: url('../img/layout/cadastre-se.png'); background-repeat: no-repeat;border:none;height:30px;width:132px;margin:7px 0 0 20px;float:left;}
+.btn-teste-home:hover {background-image: url('../img/layout/cadastre-se-over.png');}
+
+.btn-minha-conta-home{color: #FFF !important;text-align:center;
+    padding: 5px 4px 0 4px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: Tahoma, Geneva, sans-serif;background-color:#043674;border:none;height:25px;width:132px;margin:7px 0 0 20px;float:left;}/*url('../img/layout/minha-conta.png'); background-repeat: no-repeat;*/
+.btn-minha-conta-home:hover{background-color:#F6842E;color:#fff;text-decoration:none;}/*background-image: url('../img/layout/minha-conta-over.png');*/
+.btn-minha-conta-home a{color:#fff !important;}
+.btn-minha-conta-home a:visited{color:#fff !important;}
+.topbar {background: #06529e; /*border-bottom: 1px solid #F2F2F2;*/color: #FFF; height: 35px;overflow: hidden;position: relative; z-index: 4;}
+.formato{ height: 110px; width: 940px; padding: 5px 10px 0 10px; margin: 0 auto;}
+.formato a{float: right; color: #fff; padding-top:0.35%;}
+.formato a:hover{color:#fff !important; text-decoration:underline !important;}
+.formato a:visited {color:#fff !important; text-decoration:none !important;}
+.formato a:link {color:#fff !important; text-decoration:none;}
+
+
+#topo-login{width: 300px;border: 1px solid #ccc;border-bottom: none;border-top: none;float: right;height: 98px;background-color: #F3F3F3;padding:10px 10px 1px 10px;}
+#topo-login-input label{color: #039;width:43px;display:block;float:left;text-align:right;}
+#topo-login-input input[type="text"], #topo-login-input input[type="password"]{float:left;}
+body #topo-login table tr,body #topo-login table tr td{border:none;border:0px;}
+.topo-login-lembrarsenha{font-size:10px;vertical-align:text-top;}
+.topo-login-lembrarsenha a:active,.topo-login-lembrarsenha a:visited,.topo-login-lembrarsenha a:link{color:#808080;}
+.topo-login-lembrarsenha a:hover{color:#039;}
+
+.topo-login-btn-entrar{background-position:center center;background-image:url('../img/layout/entrar_s1.png');background-repeat:no-repeat;background-color:transparent; border:0px; color:#fff;font-weight:bold;width:65px;height: 30px;}
+.topo-login-btn-entrar:hover{background-image: url('../img/layout/entrar_s2.png');}
+#topo-login-confirmacao{margin:0;}
+#topo-menu{background-position: center center;height: 46px;background-image: url('../img/layout/menu_s1.png');background-repeat: repeat-x;}
+#topo-menu-conteudo
+{height: 46px;width:960px;margin:0 auto;}
+
+/*---mensagem de critica*/
+.mensagem-critica-topo{margin:10px 0;padding:5px;font-size:14px;font-weight:bold;border:1px solid #C30;background:#FFE6E6;border-radius:5px;box-shadow:2px 2px 2px #999;}
+.mensagem-sucesso-topo{margin:10px 0;padding:5px;font-size:14px;font-weight:bold;border:1px solid #33CC33;background:#9F9;border-radius:5px;box-shadow:2px 2px 2px #999;}
+.mensagem-alerta-topo {margin:10px 0;padding:5px;font-size:14px;font-weight:bold;border:1px solid #FFCC00;background:#FFC;border-radius:5px;box-shadow:2px 2px 2px #999;}
+/*--------*/
+
+/*------Lista Menu------*/
+#topo-menu-conteudo ul {margin:0;padding:0;list-style:none;height:44px;font-family: Arial, Helvetica, sans-serif;font-size:12px;width:800px;float:left;}
+#topo-menu-conteudo ul li{cursor:pointer;padding:0 13px 0 13px;float:left;position:relative;font-weight:lighter;color:#fff;height:44px;line-height:44px;z-index:99999;font-weight:bold;}
+#topo-menu-conteudo ul li a{color:#fff;}
+#topo-menu-conteudo ul li:hover{background-color:#fff;color:#444;border-top:1px solid #ccc;}
+#topo-menu-conteudo ul li:hover a{color:#444;}
+#topo-menu-conteudo ul li:hover ul{display:block;}
+#topo-menu-conteudo ul li ul{display:none;padding:5px;position:absolute;width:225px;top:44px;left:-1px;background-color:#fff;height:auto;border-radius:0 0 5px 5px;border-left:1px solid #DEDEDE;border-right:1px solid #DEDEDE;border-bottom:1px solid #DEDEDE;box-shadow: #999 0 2px 2px;}
+#topo-menu-conteudo ul li ul li{padding:2px 10px 2px 10px;line-height:20px;height:20px;width:auto;white-space:nowrap;float:none;}
+#topo-menu-conteudo ul li ul li a{color:#ccc;font-weight:normal;width:100%;line-height:16px;}
+#topo-menu-conteudo ul li ul li:hover{background-color: #EEE;border:none;}
+#corpo{ height: auto; margin: 0 auto;  }
+#corpo-conteudo{ clear:both; color: #666;width: 960px;margin: 20px auto;margin-bottom:80px; min-height:500px;}/*min-height:500px; }*/
+.corpo-conteudo-full{margin: 20px auto;}
+.corpo-conteudo{clear:both; color: #666;width: 960px;margin:0px auto;}
+#corpo-conteudo-meio{clear:both; height:auto;}
+
+#corpo-conteudo h1{font-family:Tahoma,Geneva,sans-serif;font-size:26px;color:#999;margin-top:30px;margin-bottom:25px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding-bottom:25px;clear:both;text-transform:uppercase;font-weight:normal;word-spacing:5px}
+#corpo-conteudo h2{font-family:Tahoma,Geneva,sans-serif;font-size:16px;color:#999;margin-top:30px;margin-bottom:25px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#CCC;padding-bottom:25px;clear:both;text-transform:uppercase;font-weight:normal;word-spacing:5px}
+#corpo-conteudo h3{font-family:Tahoma,Geneva,sans-serif;text-shadow:none;font-size:20px;color:#039;clear:both;text-transform:none;font-weight:bold;word-spacing:3px;height:33px;clear:both;background-image:none;border-radius:7px;padding-top:10px;padding-left:20px;background-color:#eaeaea}
+#corpo-conteudo h4{font-family:Tahoma,Geneva,sans-serif;line-height:20px;font-weight:bold;font-size:14px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;color: #039;}
+#corpo-conteudo h5{font-family:Tahoma,Geneva,sans-serif;font-size:16px;font-weight:normal}
+
+
+.corpo-conteudo-h3{font-family:Tahoma,Geneva,sans-serif !important;text-shadow:none !important;font-size:20px !important;color:#039 !important;clear:both !important;text-transform:none !important;font-weight:bold !important;word-spacing:3px !important;height:33px !important;clear:both !important;background-image:none !important;border-radius:7px !important;padding-top:10px !important;padding-left:20px !important;background-color:#eaeaea !important;text-align:left;}
+
+#corpo-titulo-pagina{width: 960px;margin: 10px auto;height:30px;padding:20px 0;}
+#corpo-titulo-tx{height:30px;width:330px;margin:5px;float:left;font-size:16px;font-weight:bold;color:#666666;text-transform:uppercase;}
+
+
+#mapa-site{clear:both; height: 153px; width: 100%; position:absolute; bottom: 0;}/*height: 245px;*/
+#mapa-site-conteudo{height:200px;width: 100%;clear:both;background-color: #034485;background-image: url('../img/layout/footer_s1.png');background-repeat: repeat-x;background-position: center top;}
+#mapa-site-conteudo-center{width: 960px;margin:0px auto;height:180px;}
+
+#mapa-do-site-lista{padding:0;margin:20px 0 0 0;width:100%;list-style:none;color:#fff;min-height:150px;float:left;}
+#mapa-do-site-lista li{float:left;margin-left:25px;}
+#mapa-do-site-lista li:first-child{margin-left:0;}
+#mapa-do-site-lista li span{font-size:14px;font-weight:bold;margin-bottom:5px;}
+#mapa-do-site-lista li span a{cursor:pointer;}
+#mapa-do-site-lista li ul{margin-top:3px;}
+#mapa-do-site-lista li ul li{float:none;margin:0;}
+#mapa-do-site-lista li ul li a{font-size:11px;font-weight:normal;cursor:pointer;}
+
+#rodape-laranja{height:38px;background:#F58634;width:100%;}
+#rodape-azul{width:100%;height:65px; margin-top:50px; background:#033C74;}
+.rodape-center{width: 960px;margin:0px auto;height:65px;text-align:center;}
+.rodape-center-laranja{width: 960px;margin:0px auto;height:38px;text-align:center;}
+.rodape-center span.logo-rodape{float:right;margin:15px 0 0 0;}
+.rodape-center span.endereco-rodape{ margin:10px 0;color:#fff;}
+.rodape-center-laranja p{padding:9px 0;color:#fff;}
+
+
+.box-amarelo {
+	background-color: #ffc;
+    border: 1px solid #CCC;
+    margin-right: auto;
+    margin-left: auto;
+    vertical-align: middle;    
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+.box-amarelo .titulo-azul {
+	color: #039;
+	font-weight: bold;
+}
+
+.interrogacao_ajuda_amarelo
+{
+    background-color: #FFFFBE;
+    border: 1px solid #FDDDB4;
+    padding: 0px 3px;
+    border-radius: 9px;
+    font-size: 9px;
+    color: #999;
+}
+.interrogacao_ajuda_amarelo:hover
+{
+    background-color: #FAFA85;
+    border: 1px solid #F6C98E;
+    color: #666666;
+    cursor:help;
+}
+
+
+
+/*---Lembrar-Senha---*/
+#ancora-lembrar-senha{position:relative;float: left;margin: 40px 0 0 35px;}
+#box-esqueceu-senha{width: 280px;height: 180px;position: absolute;top: 20px;background: #525252;opacity: .7;z-index: 99999999;left: -115px;padding: 10px;}
+#box-esqueceu-senha-content{height:100%;width:100%;background-color:#fff;opacity:1;}
+/*--Botões---*/
+/*.btn-azul-escuro,.btn-azul-escuro:visited,.btn-azul-escuro:active,.btn-azul-escuro:link{background-color:#044991;color:#FFFFFF;border:0px;padding:5px;font-weight:bold;border-radius:5px;}*/
+
+.btn-azul-escuro,.btn-azul-escuro:visited,.btn-azul-escuro:link{background-color:#043674;color:#FFFFFF;border:0px;height:25px;padding:4px;font-weight:bold;border-radius:5px;font-family: Tahoma, Geneva, sans-serif;}
+.btn-azul-escuro:hover,.btn-azul-escuro:active{background-color:#F6842F;color:#fff !important;text-decoration:none !important;}
+
+
+.btn-confirma-dados {background-image: url('../img/layout/confirmar-dados.png') ; background-repeat: no-repeat;background-color: transparent;border:none; height: 45px; width: 220px;}
+.btn-confirma-dados:hover {background-image: url('../img/layout/confirmar-dados-over.png');}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .65;
+}

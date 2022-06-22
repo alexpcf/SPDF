@@ -1,0 +1,156 @@
+﻿@model List<Projeto.Presentation.Areas.AreaRestrita.Models.LogEnvioEmailViewModel>
+@{
+    ViewBag.Title = "EnviarEmailNovo";
+    Layout = "~/Areas/AreaRestrita/Views/Shared/Layout.cshtml";
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="~/Scripts/scss/main.css" rel="stylesheet" />
+    <link href="~/Scripts/scss/skin.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/script/index.js"></script>
+</head>
+<body id="wrapper">
+    <section id="top-header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 top-header-links">
+                    <ul class="contact_links">
+                        <li><i class="fa fa-phone"></i><a href="#">+21 1111 1111</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="#">spdfprojeto@gmail.com</a></li>
+                    </ul>
+                </div>
+                @*<div class="col-md-6 col-sm-6 col-xs-12">
+                        <ul class="social_links">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                        </ul>
+                    </div>*@
+            </div>
+        </div>
+
+    </section>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    @*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>*@
+                    <a class="navbar-brand" href="#">
+                        <h1>SPDS</h1><span>Pesquisa e Satisfação</span>
+                    </a>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!--/.nav-ends -->
+    </header>
+    <section id="top_banner" style="padding: 20px 30px"></section>
+
+    @using (Html.BeginForm("EnviaEmail", "EnvioEmail", FormMethod.Post))
+    {
+        <section id="login-reg">
+            <div class="container">
+                <!-- Top content -->
+                <div class="row">
+
+                    <br />
+                    <a href="/AreaRestrita/Principal" style="background-color:#159eee" class="btn btn-success">
+                        Voltar para a página inicial
+                    </a>
+
+                    <strong>@ViewBag.Mensagem</strong>
+                    <form role="form" action="" style="padding: 6px,120px">
+                        <div class="input-group form-group">
+                            <p>E-mail de envio</p>
+                            @Html.TextBox("txtEmail", "", new { @class = "form-control" })
+                        </div>
+                        <button type="submit" style="background-color:#159eee;padding: 6px,120px" class="btn btn-success">Envio de E-mail</button>
+
+                        <br />
+                        <br />
+                    </form>
+
+                </div>
+            </div>
+
+
+            <strong>@ViewBag.Mensagem</strong>
+
+        </section>
+    }
+    <h2>Últimos Envios</h2>
+    <table class="table table-bordered">
+        <thead>
+            <!-- cabeçalho -->
+            <tr>
+                <!-- linha -->
+                <th>IdLog</th>
+                <th>Enviado Por</th>
+                <th>Email</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- corpo -->
+
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <!-- linha -->
+                    <td> @c.IdLogEnvio </td>
+                    <td> @c.IdEnvio </td>
+                    <td> @c.Email </td>
+                    <td> @c.DataCriacao </td>
+                    @*<td>
+
+                            <a href="/Cliente/Edicao?id=@c.IdClienteCpf"
+                               class="btn btn-primary">
+                                Atualizar
+                            </a>
+
+                            <a href="/Cliente/Exclusao?id=@c.IdClienteCpf"
+                               class="btn btn-danger">
+                                Excluir
+                            </a>
+
+                        </td>*@
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    Quantidade de clientes: @Model.Count
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <section id="bottom-footer" style="padding: 70px 10px; "></section>
+    <div id="panel">
+        <div id="panel-admin">
+            <div class="panel-admin-box">
+
+            </div>
+
+        </div>
+        @*<a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>*@
+    </div>
+</body>
+</html>

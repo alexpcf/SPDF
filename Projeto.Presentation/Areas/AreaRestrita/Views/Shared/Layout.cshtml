@@ -1,0 +1,49 @@
+﻿@using Newtonsoft.Json
+@using Projeto.Presentation.Models
+
+@{
+    //lendo os dados do usuario gravado no ticket
+    //em formato JSON..
+    string authJSON = User.Identity.Name;
+
+    //deserializar de JSON para objeto..
+    var auth = JsonConvert.DeserializeObject<ClienteEmpresaAutenticarViewModel>(authJSON);
+}
+
+<html>
+<head>
+   
+    <title>SISTEMA DE PESQUISA DE SATISFAÇÃO</title>
+   
+    <!-- folhas de estilo CSS -->
+   
+    @RenderSection("head", false)
+    <style>
+        .modal-content {
+            width: 350px !important;
+            margin: 30px auto !important;
+        }
+    </style>
+
+</head>
+<body >
+    
+    @*<div class="row">
+        <div class="col-md-8">
+
+           
+
+        </div>
+        <div class="col-md-4 text-right">
+            <strong>Usuário autenticado:</strong> <br/>
+            @User.Identity.Name | <a href="/Usuario/Logout">Sair</a>
+        </div>
+
+    </div>*@
+    
+    <!-- Área principal do layout -->
+    @RenderBody()
+    <!-- Seção para conteudo javascript -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

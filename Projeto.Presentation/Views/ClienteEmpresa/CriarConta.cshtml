@@ -1,0 +1,272 @@
+﻿@model Projeto.Presentation.Models.ClienteEmpresaCriarContaViewModel
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cadastro</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="~/Scripts/scss/main.css" rel="stylesheet" />
+    <link href="~/Scripts/scss/skin.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/script/index.js"></script>
+    <script>
+        function marcaDesmarca(caller) {
+            var checks = document.querySelector('input[type="checkbox"]');
+            for (let i = 0; i < checks.length; i++) {
+                checks[i].checked = checks[i] == caller;
+            }
+        }
+
+    </script>
+    <script>
+        function marcaDesmarca2(caller) {
+            var checks = document.querySelector('input[type="checkbox"]');
+            for (let i = 0; i < checks.length; i++) {
+                checks[i].checked = checks[i] == caller;
+            }
+        }
+
+    </script>
+</head>
+
+<body id="wrapper">
+
+    <section id="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 top-header-links">
+                    <ul class="contact_links">
+                        <li><i class="fa fa-phone"></i><a href="#">+21 1111 1111</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="#">spdfprojeto@gmail.com</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    @*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>*@
+                    <a class="navbar-brand" href="#">
+                        <h1>SPDS</h1><span>Pesquisa e Satisfação</span>
+                    </a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/Home/Index" ">Home</a></li>
+                        @*<li><a href="features.html">Features</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>*@
+                        @*<li><a href="/Questionario/CriarQuestionario">Questionário</a></li>*@
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="/ClienteEmpresa/Autenticar">Login</a></li>
+                        <li><a href="/ClienteEmpresa/CriarConta"> Cadastro</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!--/.nav-ends -->
+    </header>
+
+    <section id="top_banner">
+        <div class="banner">
+            <div class="inner text-center">
+                <h2></h2>
+            </div>
+        </div>
+    </section>
+
+
+@using (Html.BeginForm("CadastrarClienteEmpresa", "ClienteEmpresa", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+        <section id="login-reg">
+            <div class="container">
+                <!-- Top content -->
+                <div class="row">
+
+                    <!--forms-right-icons-->
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Cadastro</h3>
+                                    <p>Preencha o Questionário Abaixo</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                            @ViewBag.Mensagem
+                            <div class="form-bottom">
+                                <form role="form" action="" class="login-form">
+                                    <div class="input-group form-group">
+                                        <label>Nome do Cliente</label>
+                                        @Html.TextBoxFor(model => model.NomeClienteEmpresa,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.NomeClienteEmpresa)
+                                        </span>
+                                        <br />
+
+
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Cnpj</label>
+                                        @Html.TextBoxFor(model => model.Cnpj,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Cnpj)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Data Nascimento</label>
+                                        @Html.TextBoxFor(model => model.DataNascimento,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.DataNascimento)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Sexo</label>
+                                        @Html.TextBoxFor(model => model.Sexo,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Sexo)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Telefone</label>
+                                        @Html.TextBoxFor(model => model.Telefone,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Telefone)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Endereço</label>
+                                        @Html.TextBoxFor(model => model.Endereco,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Endereco)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Cidade</label>
+                                        @Html.TextBoxFor(model => model.Cidade,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Cidade)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Cep</label>
+                                        @Html.TextBoxFor(model => model.Cep,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Cep)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Numero</label>
+                                        @Html.TextBoxFor(model => model.Numero,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Numero)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Email</label>
+                                        @Html.TextBoxFor(model => model.Email,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Email)
+                                        </span>
+                                        <br />
+                                    </div>
+                                    <div class="input-group form-group">
+                                        <label>Senha</label>
+                                        @Html.PasswordFor(model => model.Senha,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.Senha)
+                                        </span>
+                                        <br />
+                                    </div>
+
+                                    <div class="input-group form-group">
+                                        <label>Confirme a Senha</label>
+                                        @Html.PasswordFor(model => model.SenhaConfirm,
+                        new { @class = "form-control" })
+                                        <span class="text-danger">
+                                            @Html.ValidationMessageFor(model => model.SenhaConfirm)
+                                        </span>
+                                        <br />
+                                    </div>
+                                
+
+
+
+
+                                    <button type="submit" class="btn btn-success">Cadastrar Cliente</button>
+
+                                    @*<input type="submit" value="Cadastro Questionário" class="btn btn-success" />*@
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    @ViewBag.Mensagem
+
+        </section>
+    }
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12 block">
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="bottom-footer"></section>
+    <div id="panel">
+        <div id="panel-admin">
+            <div class="panel-admin-box">
+
+            </div>
+
+        </div>
+        @*<a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>*@
+    </div>
+
+</body>
+
+</html>

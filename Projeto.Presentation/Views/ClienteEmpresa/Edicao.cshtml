@@ -1,0 +1,75 @@
+﻿@model Projeto.Presentation.Models.ClienteEmpresaListarViewModel
+@{
+    ViewBag.Title = "Edicao";
+    Layout = "~/Areas/AreaRestrita/Views/Shared/Layout.cshtml";
+}
+
+<h4>Atualizar dados de Cliente</h4>
+<a href="/ClienteEmpresa/ListaEmpresa" class="btn btn-info">
+    Voltar para a consulta
+</a>
+<br />
+<br />
+
+@using (Html.BeginForm("AtualizarClienteEmpresa", "ClienteEmpresa", FormMethod.Post))
+{
+    <!-- campo oculto -->
+    @Html.HiddenFor(model => model.IdClienteCnpj)
+
+    <div class="text-danger">
+        @Html.ValidationSummary()
+    </div>
+    <label>Nome do Cliente:</label>
+        @Html.TextBoxFor(model => model.NomeClienteEmpresa,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Email"
+        })
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.NomeClienteEmpresa)
+        </span>
+        <br />
+    <label>Email do Cliente:</label>
+    @Html.TextBoxFor(model => model.Email,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Email"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Email)
+    </span>
+    <br />
+
+    <label>Cnpj do Cliente:</label>
+    @Html.TextBoxFor(model => model.Cnpj,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Cpf"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Cnpj)
+    </span>
+    <br />
+
+    <label>Telefone:</label>
+    @Html.TextBoxFor(model => model.Telefone,
+        new
+        {
+            @class = "form-control col-md-4",
+            @placeholder = "Cpf"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Telefone)
+    </span>
+    <br />
+
+    <input type="submit" value="Atualizar Cliente"
+           class="btn btn-primary" />
+        <br />
+        <br />
+
+        <strong>@ViewBag.Mensagem</strong>
+}

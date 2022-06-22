@@ -1,0 +1,4 @@
+C:\Users\T-Gamer\Documents\Aula10\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+C:\Users\T-Gamer\Documents\Aula10\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+C:\Users\T-Gamer\Documents\Aula10\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+C:\Users\T-Gamer\Documents\Aula10\Projeto.Entities\obj\Debug\Projeto.Entities.pdb

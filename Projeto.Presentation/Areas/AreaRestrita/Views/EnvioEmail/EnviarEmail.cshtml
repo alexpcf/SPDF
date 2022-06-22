@@ -1,0 +1,83 @@
+﻿@model List<Projeto.Presentation.Areas.AreaRestrita.Models.LogEnvioClienteCpfViewModel>
+@{
+    ViewBag.Title = "EnviarEmailNovo";
+    Layout = "~/Areas/AreaRestrita/Views/Shared/Layout.cshtml";
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="~/Scripts/scss/main.css" rel="stylesheet" />
+    <link href="~/Scripts/scss/skin.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/script/index.js"></script>
+
+</head>
+<body id="wrapper">
+
+
+
+   
+    <table class="table table-bordered">
+        <thead>
+            <!-- cabeçalho -->
+            <tr>
+                <!-- linha -->
+                <th>IdLog</th>
+                <th>id Enviou</th>
+                <th>Email</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- corpo -->
+
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <!-- linha -->
+                    <td> @c.IdLogEnvio </td>
+                    <td> @c.IdEnvio </td>
+                    <td> @c.Email </td>
+                    <td> @c.DataCriacao </td>
+                    @*<td>
+
+                            <a href="/Cliente/Edicao?id=@c.IdClienteCpf"
+                               class="btn btn-primary">
+                                Atualizar
+                            </a>
+
+                            <a href="/Cliente/Exclusao?id=@c.IdClienteCpf"
+                               class="btn btn-danger">
+                                Excluir
+                            </a>
+
+                        </td>*@
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    Quantidade de clientes: @Model.Count
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+
+
+
+</body>
+
+</html>
+

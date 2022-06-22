@@ -1,0 +1,33 @@
+﻿@model Projeto.Presentation.Areas.AreaRestrita.Models.RelatorioExclusaoViewModel
+@{
+    ViewBag.Title = "Exclusao";
+    Layout = "~/Areas/AreaRestrita/Views/Shared/Layout.cshtml";
+}
+
+<h4>Excluir Cliente</h4>
+<a href="/AreaRestrita/Relatorio/Relatorio" class="btn btn-info">
+    Voltar para a consulta
+</a>
+<br />
+<br />
+
+
+@using (Html.BeginForm("ExcluirCliente", "Relatorio", FormMethod.Post))
+{
+    <!-- campo oculto -->
+    @Html.HiddenFor(model => model.IdClienteQuestionario)
+    <label>ID Relatorio: @Model.IdClienteQuestionario</label>
+  
+    <br />
+
+    <label>Email: @Model.Email</label>
+    <br />
+
+    <label>Cpf: @Model.Cpf</label>
+
+    <br />
+    <br />
+
+    <input type="submit" value="Confirmar Exclusão"
+           class="btn btn-danger" />
+}

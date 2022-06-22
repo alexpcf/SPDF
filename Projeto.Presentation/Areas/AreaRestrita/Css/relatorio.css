@@ -1,0 +1,29 @@
+﻿body {
+    font-family: Verdana;
+    font-size: 10pt;
+}
+
+h1{
+    font-weight: bold;
+    color: #07286b;
+    font-size: 10pt;
+}
+
+table{
+    border: 1px solid #000;
+    width: 100%;
+}
+
+th{
+    font-weight: bold;
+    background-color: #e5e5e5;
+    border: 0px solid #ccc;
+    text-align: center;
+    font-size: 9pt;    
+}
+
+td {
+    border: 0px solid #ccc;
+    text-align: center;
+    font-size: 9pt;
+}
