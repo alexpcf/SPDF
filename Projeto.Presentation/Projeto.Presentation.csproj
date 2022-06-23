@@ -2163,6 +2163,7 @@
     <Compile Include="Models\ClienteEmpresaCriarContaViewModel.cs" />
     <Compile Include="Models\ClienteEmpresaExclusaoViewModel.cs" />
     <Compile Include="Models\ClienteEmpresaListarViewModel.cs" />
+    <Compile Include="Models\ClienteEmpresaTelaInicialViewModel.cs" />
     <Compile Include="Models\QuestionarioCadastroViewModel.cs" />
     <Compile Include="Models\UsuarioAutenticarViewModel.cs" />
     <Compile Include="Models\UsuarioCriarContaViewModel.cs" />

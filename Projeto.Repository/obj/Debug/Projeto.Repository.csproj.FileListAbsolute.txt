@@ -7,3 +7,12 @@ C:\Users\T-Gamer\Documents\Aula10\Projeto.Repository\bin\Debug\Dapper.xml
 C:\Users\T-Gamer\Documents\Aula10\Projeto.Repository\obj\Debug\Projeto.Repository.dll
 C:\Users\T-Gamer\Documents\Aula10\Projeto.Repository\obj\Debug\Projeto.Repository.pdb
 C:\Users\T-Gamer\Documents\Aula10\Projeto.Repository\obj\Debug\Projeto.Repository.csprojResolveAssemblyReference.cache
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\bin\Debug\Projeto.Repository.dll
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\bin\Debug\Projeto.Repository.pdb
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\bin\Debug\Dapper.dll
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\bin\Debug\Projeto.Entities.dll
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\bin\Debug\Projeto.Entities.pdb
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\bin\Debug\Dapper.xml
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\obj\Debug\Projeto.Repository.csprojResolveAssemblyReference.cache
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\obj\Debug\Projeto.Repository.dll
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Repository\obj\Debug\Projeto.Repository.pdb

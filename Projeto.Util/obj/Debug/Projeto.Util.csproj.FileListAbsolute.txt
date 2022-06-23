@@ -2,3 +2,8 @@ C:\Users\T-Gamer\Documents\Aula10\Projeto.Util\bin\Debug\Projeto.Util.dll
 C:\Users\T-Gamer\Documents\Aula10\Projeto.Util\bin\Debug\Projeto.Util.pdb
 C:\Users\T-Gamer\Documents\Aula10\Projeto.Util\obj\Debug\Projeto.Util.dll
 C:\Users\T-Gamer\Documents\Aula10\Projeto.Util\obj\Debug\Projeto.Util.pdb
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Util\bin\Debug\Projeto.Util.dll
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Util\bin\Debug\Projeto.Util.pdb
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Util\obj\Debug\Projeto.Util.csprojResolveAssemblyReference.cache
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Util\obj\Debug\Projeto.Util.dll
+C:\Users\T-Gamer\Desktop\SPDS - 22-06-2022\Projeto.Util\obj\Debug\Projeto.Util.pdb

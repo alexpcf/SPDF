@@ -42,6 +42,12 @@ namespace Projeto.Presentation.Business
             return repository.FindAll();
         }
 
+        public List<ClienteEmpresa> ConsultarTodosTelaInicial()
+        {
+            return repository.FindAll();
+        }
+
+
         //método para obter 1 cliente pelo id
         public ClienteEmpresa ConsultarPorId(int IdClienteCnpj)
         {

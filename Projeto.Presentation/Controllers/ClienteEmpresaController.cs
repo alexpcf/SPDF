@@ -126,6 +126,29 @@ namespace Projeto.Presentation.Controllers
         }
 
 
+        private List<ClienteEmpresaTelaInicialViewModel> ObterConsultaDeClienteEmpresaTelaInicial()
+        {
+            //declarando e inicializando uma lista
+            var lista = new List<ClienteEmpresaTelaInicialViewModel>();
+
+            //acessando a camada business para consultar os clientes
+            foreach (ClienteEmpresa q in business.ConsultarTodosTelaInicial())
+            {
+                var model = new ClienteEmpresaTelaInicialViewModel();
+                model.IdClienteCnpj = q.IdClienteCnpj;
+                model.Email = q.Email;
+                model.DataCriacao = q.DataCriacao;
+                model.NomeClienteEmpresa = q.NomeClienteEmpresa;
+
+
+                lista.Add(model); //adicionar na lista
+            }
+
+            //retornando a lista
+            return lista;
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken] //pedindo uma chave de segurança..
         public ActionResult AutenticarClienteEmpresa(ClienteEmpresaAutenticarViewModel model)

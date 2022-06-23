@@ -4,7 +4,7 @@
     Layout = "~/Areas/AreaRestrita/Views/Shared/Layout.cshtml";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>*@
 <h2>Resultado dos Questionários</h2>
 <a href="/AreaRestrita/Principal" style="background-color:#159eee" class="btn btn-success">
     Voltar para a página inicial
@@ -126,4 +126,173 @@
         });
     </script>
 }
+
+@using (Html.BeginForm("Index", "Teste", null, FormMethod.Post))
+{
+
+    <div Style="font-family: Corbel; font-size: small ;text-align:center " class="row">
+        <div>
+            <div style="width:30%;height:30%">
+                <canvas id="myChart3" style="padding: 0;margin: auto;display: block; "> </canvas>
+            </div>
+        </div>
+    </div>
+    <div Style="font-family: Corbel; font-size: small ;text-align:center; " class="row">
+        <div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/Teste/NewChart3",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (mems) {
+                var aData = mems;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Quantidade",
+                        data: aDatasets1,
+                        fill: false,
+                        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                        borderColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                        borderWidth: 1
+                    }]
+                };
+                var ctx = $("#myChart3").get(0).getContext("2d");
+                var myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Quantitativo da Questão 3' },
+                        legend: { position: 'bottom' },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                        },
+                    }
+                });
+            }
+        });
+    </script>
+}
+@using (Html.BeginForm("Index", "Teste", null, FormMethod.Post))
+{
+
+    <div Style="font-family: Corbel; font-size: small ;text-align:center " class="row">
+        <div>
+            <div style="width:30%;height:30%">
+                <canvas id="myChart4" style="padding: 0;margin: auto;display: block; "> </canvas>
+            </div>
+        </div>
+    </div>
+    <div Style="font-family: Corbel; font-size: small ;text-align:center; " class="row">
+        <div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/Teste/NewChart4",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (mems) {
+                var aData = mems;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Quantidade",
+                        data: aDatasets1,
+                        fill: false,
+                        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                        borderColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                        borderWidth: 1
+                    }]
+                };
+                var ctx = $("#myChart4").get(0).getContext("2d");
+                var myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Quantitativo da Questão 4' },
+                        legend: { position: 'bottom' },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                        },
+                    }
+                });
+            }
+        });
+    </script>
+}
+
+@using (Html.BeginForm("Index", "Teste", null, FormMethod.Post))
+{
+
+    <div Style="font-family: Corbel; font-size: small ;text-align:center " class="row">
+        <div>
+            <div style="width:30%;height:30%">
+                <canvas id="myChart5" style="padding: 0;margin: auto;display: block; "> </canvas>
+            </div>
+        </div>
+    </div>
+    <div Style="font-family: Corbel; font-size: small ;text-align:center; " class="row">
+        <div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/Teste/NewChart5",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (mems) {
+                var aData = mems;
+                var aLabels = aData[0];
+                var aDatasets1 = aData[1];
+                var dataT = {
+                    labels: aLabels,
+                    datasets: [{
+                        label: "Quantidade",
+                        data: aDatasets1,
+                        fill: false,
+                        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+                        borderColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+                        borderWidth: 1
+                    }]
+                };
+                var ctx = $("#myChart5").get(0).getContext("2d");
+                var myNewChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataT,
+                    options: {
+                        responsive: true,
+                        title: { display: true, text: 'Quantitativo da Questão 5' },
+                        legend: { position: 'bottom' },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 50, beginAtZero: true } }]
+                        },
+                    }
+                });
+            }
+        });
+    </script>
+}
+
+
 
