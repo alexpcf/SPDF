@@ -1891,6 +1891,7 @@
     <Content Include="Areas\AreaRestrita\Vendor\jquery\jquery.min.js" />
     <Content Include="Areas\AreaRestrita\Vendor\jquery\jquery.slim.js" />
     <Content Include="Areas\AreaRestrita\Vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Areas\AreaRestrita\Vendor\jquery\Script.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
