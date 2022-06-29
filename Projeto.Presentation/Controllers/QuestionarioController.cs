@@ -82,11 +82,19 @@ namespace Projeto.Presentation.Controllers
                 //Qe.Questao1 = chkbussValue;
 
 
+                if (EmailValue != "")
+                {
+                    rep.Insert(Qe); //gravando..
+                    ViewBag.Mensagem = $"Questionário { Qe.Email}, cadastrado com sucesso.";
+                }
+                else
+                {
+                    ViewBag.Mensagem = $"Preencha os Campos Obrigatórios";
+                }
 
+               
 
-                rep.Insert(Qe); //gravando..
-
-                ViewBag.Mensagem = $"Questionário { Qe.Email}, cadastrado com sucesso.";
+             
                 ModelState.Clear(); //limpar os campos do formulário
 
             }

@@ -2149,6 +2149,7 @@
     <Compile Include="Areas\AreaRestrita\Models\RelatorioExclusaoViewModel.cs" />
     <Compile Include="Areas\AreaRestrita\Models\RelatorioViewModel.cs" />
     <Compile Include="Areas\AreaRestrita\Models\TesteController.cs" />
+    <Compile Include="Areas\AreaRestrita\Models\usuarioLogadoViewModel.cs" />
     <Compile Include="Areas\AreaRestrita\Util\ReportsUtil.cs" />
     <Compile Include="Business\ClienteEmpresaBusiness.cs" />
     <Compile Include="Controllers\ClienteEmpresaController.cs" />

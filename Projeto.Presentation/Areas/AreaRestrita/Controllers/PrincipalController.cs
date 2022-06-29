@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Projeto.Presentation.Filters;
 using System.Data;
+using System.Web.Security;
 
 namespace Projeto.Presentation.Areas.AreaRestrita.Controllers
 {
@@ -50,7 +51,7 @@ namespace Projeto.Presentation.Areas.AreaRestrita.Controllers
             dr["Employee"] = "Carlos";
             dr["Credit"] = 587;
             dt.Rows.Add(dr);
-
+            string userId = Membership.GetUser().ProviderUserKey.ToString();
             //dr = dt.NewRow();
             //dr["Employee"] = "Someone";
             //dr["Credit"] = rawData.Where(a => a.person == "Someone").Count().ToString();

@@ -112,10 +112,12 @@ namespace Projeto.Presentation.Areas.AreaRestrita.Controllers
 
                 // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticação)
                 _smtpClient.UseDefaultCredentials = false;
-                _smtpClient.Credentials = new NetworkCredential("spdfprojeto@gmail.com", "Spdf@0701");
+                //_smtpClient.Credentials = new NetworkCredential("spdfprojeto@gmail.com", "Spdf@07012425");
+                _smtpClient.Credentials = new NetworkCredential("spdfprojeto@gmail.com", "mvqlwhhxjvrbdojm");
+
 
                 _smtpClient.EnableSsl = true;
-
+                
                 _smtpClient.Send(_mailMessage);
 
 

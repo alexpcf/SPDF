@@ -32,6 +32,108 @@
         }
 
     </script>
+    @*<%--    mascara de CPf --%>*@
+    <script type="text/javascript">
+        function formataCNPJ(cpf) {
+            const elementoAlvo = cpf
+            const cpfAtual = cpf.value
+
+            let cpfAtualizado;
+
+
+            cpfAtualizado = cpfAtual.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
+                function (regex, argumento1, argumento2, argumento3, argumento4, argumento5) {
+                    return argumento1 + '.' + argumento2 + '.' + argumento3 + '/' + argumento4 + '-' + argumento5;
+                })
+            elementoAlvo.value = cpfAtualizado;
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#cnpj").mask("99.999.999/9999-99");
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input.fone").mask("(99) 99999-9999");
+        });
+    </script>
+
+    <script type="text/javascript">
+        function mascaraData(val) {
+            var pass = val.value;
+            var expr = /[0123456789]/;
+
+            for (i = 0; i < pass.length; i++) {
+                // charAt -> retorna o caractere posicionado no índice especificado
+                var lchar = val.value.charAt(i);
+                var nchar = val.value.charAt(i + 1);
+
+                if (i == 0) {
+                    // search -> retorna um valor inteiro, indicando a posição do inicio da primeira
+                    // ocorrência de expReg dentro de instStr. Se nenhuma ocorrencia for encontrada o método retornara -1
+                    // instStr.search(expReg);
+                    if ((lchar.search(expr) != 0) || (lchar > 3)) {
+                        val.value = "";
+                    }
+
+                } else if (i == 1) {
+
+                    if (lchar.search(expr) != 0) {
+                        // substring(indice1,indice2)
+                        // indice1, indice2 -> será usado para delimitar a string
+                        var tst1 = val.value.substring(0, (i));
+                        val.value = tst1;
+                        continue;
+                    }
+
+                    if ((nchar != '/') && (nchar != '')) {
+                        var tst1 = val.value.substring(0, (i) + 1);
+
+                        if (nchar.search(expr) != 0)
+                            var tst2 = val.value.substring(i + 2, pass.length);
+                        else
+                            var tst2 = val.value.substring(i + 1, pass.length);
+
+                        val.value = tst1 + '/' + tst2;
+                    }
+
+                } else if (i == 4) {
+
+                    if (lchar.search(expr) != 0) {
+                        var tst1 = val.value.substring(0, (i));
+                        val.value = tst1;
+                        continue;
+                    }
+
+                    if ((nchar != '/') && (nchar != '')) {
+                        var tst1 = val.value.substring(0, (i) + 1);
+
+                        if (nchar.search(expr) != 0)
+                            var tst2 = val.value.substring(i + 2, pass.length);
+                        else
+                            var tst2 = val.value.substring(i + 1, pass.length);
+
+                        val.value = tst1 + '/' + tst2;
+                    }
+                }
+
+                if (i >= 6) {
+                    if (lchar.search(expr) != 0) {
+                        var tst1 = val.value.substring(0, (i));
+                        val.value = tst1;
+                    }
+                }
+            }
+
+            if (pass.length > 10)
+                val.value = val.value.substring(0, 10);
+            return true;
+        }
+    </script>
+   
 </head>
 
 <body id="wrapper">
@@ -48,7 +150,7 @@
 
             </div>
         </div>
-        </div>
+
 
     </section>
 
@@ -93,9 +195,9 @@
     </section>
 
 
-@using (Html.BeginForm("CadastrarClienteEmpresa", "ClienteEmpresa", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("CadastrarClienteEmpresa", "ClienteEmpresa", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
         <section id="login-reg">
             <div class="container">
                 <!-- Top content -->
@@ -119,7 +221,7 @@
                                     <div class="input-group form-group">
                                         <label>Nome do Cliente</label>
                                         @Html.TextBoxFor(model => model.NomeClienteEmpresa,
-                        new { @class = "form-control" })
+                        new { @class = "form-control", MaxLength = 80 })
                                         <span class="text-danger">
                                             @Html.ValidationMessageFor(model => model.NomeClienteEmpresa)
                                         </span>
@@ -130,7 +232,7 @@
                                     <div class="input-group form-group">
                                         <label>Cnpj</label>
                                         @Html.TextBoxFor(model => model.Cnpj,
-                        new { @class = "form-control" })
+                        new { @class = "form-control", placeholder = "00.000.000/0000-00", onblur = "formataCNPJ(this)", MaxLength = 14 })
                                         <span class="text-danger">
                                             @Html.ValidationMessageFor(model => model.Cnpj)
                                         </span>
@@ -139,7 +241,7 @@
                                     <div class="input-group form-group">
                                         <label>Data Nascimento</label>
                                         @Html.TextBoxFor(model => model.DataNascimento,
-                        new { @class = "form-control" })
+                        new { @class = "form-control", placeholder = "00/00/0000" , onkeypress = "mascaraData(this)", MaxLength = 10 })
                                         <span class="text-danger">
                                             @Html.ValidationMessageFor(model => model.DataNascimento)
                                         </span>
@@ -148,7 +250,7 @@
                                     <div class="input-group form-group">
                                         <label>Sexo</label>
                                         @Html.TextBoxFor(model => model.Sexo,
-                        new { @class = "form-control" })
+                        new { @class = "form-control", MaxLength = 30 })
                                         <span class="text-danger">
                                             @Html.ValidationMessageFor(model => model.Sexo)
                                         </span>
@@ -157,7 +259,7 @@
                                     <div class="input-group form-group">
                                         <label>Telefone</label>
                                         @Html.TextBoxFor(model => model.Telefone,
-                        new { @class = "form-control" })
+                        new { @class = "form-control", placeholder = "(99) 9999-9999", maxlength = 15 })
                                         <span class="text-danger">
                                             @Html.ValidationMessageFor(model => model.Telefone)
                                         </span>
@@ -166,7 +268,7 @@
                                     <div class="input-group form-group">
                                         <label>Endereço</label>
                                         @Html.TextBoxFor(model => model.Endereco,
-                        new { @class = "form-control" })
+                        new { @class = "form-control", MaxLength = 50 })
                                         <span class="text-danger">
                                             @Html.ValidationMessageFor(model => model.Endereco)
                                         </span>
@@ -175,7 +277,7 @@
                                     <div class="input-group form-group">
                                         <label>Cidade</label>
                                         @Html.TextBoxFor(model => model.Cidade,
-                        new { @class = "form-control" })
+                        new { @class = "form-control", MaxLength = 50 })
                                         <span class="text-danger">
                                             @Html.ValidationMessageFor(model => model.Cidade)
                                         </span>
@@ -184,7 +286,7 @@
                                     <div class="input-group form-group">
                                         <label>Cep</label>
                                         @Html.TextBoxFor(model => model.Cep,
-                        new { @class = "form-control" })
+                        new { @class = "form-control", placeholder = "00000-000", MaxLength = 10 })
                                         <span class="text-danger">
                                             @Html.ValidationMessageFor(model => model.Cep)
                                         </span>
@@ -227,7 +329,7 @@
                                         </span>
                                         <br />
                                     </div>
-                                
+
 
 
 

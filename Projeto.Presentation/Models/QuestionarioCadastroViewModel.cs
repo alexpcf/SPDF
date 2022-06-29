@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,7 +9,9 @@ namespace Projeto.Presentation.Models
     public class QuestionarioCadastroViewModel
     {
         public int IdClienteCpf { get; set; }
+        [Required(ErrorMessage = "Informe um Cpf.")]
         public string Cpf { get; set; }
+        [Required(ErrorMessage = "Informe um E-mail.")]
         public string Email { get; set; }
         public DateTime DataCriacao { get; set; }
         public string Questao1 { get; set; }

@@ -32,6 +32,24 @@
         }
 
     </script>
+
+    @*<%--    mascara de CPf --%>*@
+    <script type="text/javascript">
+        function formataCPF(cpf) {
+            const elementoAlvo = cpf
+            const cpfAtual = cpf.value
+
+            let cpfAtualizado;
+
+
+            cpfAtualizado = cpfAtual.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,
+                function (regex, argumento1, argumento2, argumento3, argumento4) {
+                    return argumento1 + '.' + argumento2 + '.' + argumento3 + '-' + argumento4;
+                })
+            elementoAlvo.value = cpfAtualizado;
+        }
+    </script>
+
 </head>
 
 <body id="wrapper">
@@ -119,11 +137,14 @@
                                     @*<label for="fname"> Cpf:</label>
                                     <input type="text" id="CpfQuestionario" name="CpfQuestionario"><br><br>*@
                                     <span class="input-group-addon" id="CpfQuestionario"><i class="fa fa-user"></i></span>
-                                    <input type="text" class="form-control" placeholder="CPF" name="CpfQuestionario" aria-describedby="basic-addon1">
+                                    <input type="text" class="form-control" placeholder="CPF: 000.000.000-00" onblur="formataCPF(this)" maxlength="14" name="CpfQuestionario" aria-describedby="basic-addon1">
+                                    <span class="text-danger">
+                                        @Html.ValidationMessageFor(model => model.Cpf)
+                                    </span>
                                 </div>
                                 <div class="input-group form-group">
                                     <span class="input-group-addon" id="CpfQuestionario"><i class="fa fa-envelope"></i></span>
-                                    <input type="text" class="form-control" placeholder="Email" name="EmailQuestionario" aria-describedby="basic-addon1">
+                                    <input type="text" class="form-control" placeholder="Email"  maxlength="50"name="EmailQuestionario" aria-describedby="basic-addon1">
                                 </div>
                                 @*<div class="input-group form-group">
                                     <span class="input-group-addon" id="basic-addon1"></span>
@@ -309,7 +330,7 @@
                                             Classificação:
                                         </p>
 
-                                        <textarea name="RdQuestao7" id="RdQuestao7" required="required" class="form-control" rows="8"></textarea>
+                                        <textarea name="RdQuestao7" id="RdQuestao7" maxlength="100" ></textarea>
 
                                       
 
