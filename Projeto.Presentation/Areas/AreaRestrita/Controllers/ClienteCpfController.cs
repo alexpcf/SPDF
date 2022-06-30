@@ -19,7 +19,10 @@ namespace Projeto.Presentation.Areas.AreaRestrita.Controllers
         {
             return View();
         }
-
+        public ActionResult CriarCliente()
+        {
+            return View();
+        }
         private ClienteBusiness business;
 
         //construtor..
@@ -167,6 +170,42 @@ namespace Projeto.Presentation.Areas.AreaRestrita.Controllers
 
             //voltar para a página..
             return View("Edicao");
+        }
+
+
+
+        [HttpPost] //recebe requisições do tipo POST (FormMethod.Post)
+        public ActionResult CadastrarClienteCpf(ClienteCpfViewModel model)
+        {
+            //verificar se as validações foram realizadas com sucesso
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    ClienteCpfRepository rep = new ClienteCpfRepository();
+                  
+                        ClienteCpf Ce = new ClienteCpf();
+                        Ce.NomeClienteCpf = model.NomeClienteCpf;
+                        Ce.Email = model.Email;
+                        Ce.Cpf = model.Cpf;
+                        Ce.DataCriacao = model.DataCriacao;
+                        Ce.Estado = model.Estado;
+
+                        rep.Insert(Ce); //gravando..
+
+                        ViewBag.Mensagem = $"Cliente { Ce.NomeClienteCpf}, cadastrado com sucesso.";
+                        ModelState.Clear(); //limpar os campos do formulário
+                    
+                }
+                catch (Exception e)
+                {
+                    //mensagem de erro..
+                    ViewBag.Mensagem = e.Message;
+                }
+            }
+
+            //retornando para a página..
+            return View("CriarCliente"); //nome da página..
         }
 
         public void Relatorio()

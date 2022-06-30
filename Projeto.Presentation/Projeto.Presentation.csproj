@@ -2089,6 +2089,7 @@
     <Content Include="Areas\AreaRestrita\Views\Teste\Index.cshtml" />
     <Content Include="Areas\AreaRestrita\Css\bootstrap-reboot.css.map" />
     <Content Include="Areas\AreaRestrita\Css\bootstrap-reboot.min.css.map" />
+    <Content Include="Areas\AreaRestrita\Views\ClienteCpf\CriarCliente.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\img\1.jpg" />
     <Content Include="Scripts\img\banner-pattern.png" />

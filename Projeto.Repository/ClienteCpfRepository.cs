@@ -23,8 +23,8 @@ namespace Projeto.Repository
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 //comando SQL que será executado no banco de dados
-                string query = "insert into ClienteCpf(NomeClienteEmpresa, Cnpj, DataNascimento,Sexo,Telefone,Endereco,Cidade, Cep, Numero, Email, Senha, DataCriacao) "
-                             + "values(@NomeClienteEmpresa,@Cnpj,@DataNascimento,@Sexo,@Telefone,@Endereco,@Cidade,@Cep, @Numero, @Email, @Senha, GetDate())";
+                string query = "insert into ClienteCpf(NomeClienteCpf, Email,Estado,Cpf, DataCriacao) "
+                             + "values(@NomeClienteCpf,@Email,@Estado,@Cpf,GetDate())";
 
                 con.Execute(query, Ce); //executando..
             }
