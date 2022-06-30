@@ -19,6 +19,8 @@ namespace Projeto.Presentation.Areas.AreaRestrita.Controllers
             return View();
         }
 
+
+
         [HttpPost]
         public JsonResult NewChart()
         {

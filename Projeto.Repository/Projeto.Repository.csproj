@@ -47,6 +47,7 @@
     <Compile Include="ClienteCpfRepository.cs" />
     <Compile Include="ClienteEmpresaRepository.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="ContatoRepository.cs" />
     <Compile Include="EnvioEmailCpfRepository.cs" />
     <Compile Include="QuestionarioRepository.cs" />
     <Compile Include="UsuarioRepository.cs" />

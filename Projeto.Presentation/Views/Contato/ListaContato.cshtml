@@ -1,0 +1,145 @@
+﻿@model List<Projeto.Presentation.Models.ContatoListarViewModel>
+@{
+    ViewBag.Title = "ListaContato";
+    Layout = "~/Areas/AreaRestrita/Views/Shared/Layout.cshtml";
+}
+
+<h2>ListaContato</h2>
+
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consulta</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="~/Scripts/scss/main.css" rel="stylesheet" />
+    <link href="~/Scripts/scss/skin.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/script/index.js"></script>
+</head>
+<body id="wrapper">
+    <section id="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 top-header-links">
+                    <ul class="contact_links">
+                        <li><i class="fa fa-phone"></i><a href="#">+21 1111 1111</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="#">spdfprojeto@gmail.com</a></li>
+                    </ul>
+                </div>
+                @*<div class="col-md-6 col-sm-6 col-xs-12">
+                        <ul class="social_links">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                        </ul>
+                    </div>*@
+            </div>
+        </div>
+
+    </section>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    @*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>*@
+                    <a class="navbar-brand" href="#">
+                        <h1>SPDS</h1><span>Pesquisa e Satisfação</span>
+                    </a>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!--/.nav-ends -->
+    </header>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Lista de Clientes Empresa</h4>
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="/ClienteEmpresa/Relatorio" style="background-color:#159eee" class="btn btn-success">
+                Baixar Relatório
+            </a>
+        </div>
+    </div>
+    <section id="top_banner" style="padding: 140px 30px">
+
+        <a href="/AreaRestrita/Principal" style="background-color:#159eee" class="btn btn-success">
+            Voltar para a página inicial
+        </a>
+        <br /><br />
+    </section>
+
+
+
+    <table class="table table-bordered">
+        <thead>
+            <!-- cabeçalho -->
+            <tr>
+                <!-- linha -->
+                <th>IdContato</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- corpo -->
+
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <!-- linha -->
+                    <td> @c.IdContato </td>
+                    <td> @c.Nome </td>
+                    <td> @c.Email </td>
+                    <td> @c.DataCriacao </td>
+                    @*<td>
+
+                            <a href="/Cliente/Edicao?id=@c.IdClienteCpf"
+                               class="btn btn-primary">
+                                Atualizar
+                            </a>
+
+                            <a href="/Cliente/Exclusao?id=@c.IdClienteCpf"
+                               class="btn btn-danger">
+                                Excluir
+                            </a>
+
+                        </td>*@
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    Quantidade de clientes: @Model.Count
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <section id="bottom-footer" style="padding: 70px 100px;"></section>
+    <div id="panel">
+        <div id="panel-admin">
+            <div class="panel-admin-box">
+
+            </div>
+
+        </div>
+        @*<a class="open" href="#"><span><i class="fa fa-gear fa-spin"></i></span></a>*@
+    </div>
+</body>
+</html>

@@ -2154,6 +2154,8 @@
     <Compile Include="Areas\AreaRestrita\Util\ReportsUtil.cs" />
     <Compile Include="Business\ClienteEmpresaBusiness.cs" />
     <Compile Include="Controllers\ClienteEmpresaController.cs" />
+    <Compile Include="Controllers\ContatoBusiness.cs" />
+    <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\GerenciarEmail.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionarioController.cs" />
@@ -2167,6 +2169,8 @@
     <Compile Include="Models\ClienteEmpresaExclusaoViewModel.cs" />
     <Compile Include="Models\ClienteEmpresaListarViewModel.cs" />
     <Compile Include="Models\ClienteEmpresaTelaInicialViewModel.cs" />
+    <Compile Include="Models\ContatoCadastroViewModel.cs" />
+    <Compile Include="Models\ContatoListarViewModel.cs" />
     <Compile Include="Models\QuestionarioCadastroViewModel.cs" />
     <Compile Include="Models\UsuarioAutenticarViewModel.cs" />
     <Compile Include="Models\UsuarioCriarContaViewModel.cs" />
@@ -2183,6 +2187,8 @@
     <Content Include="Views\ClienteEmpresa\ListaEmpresa.cshtml" />
     <Content Include="Views\ClienteEmpresa\Edicao.cshtml" />
     <Content Include="Views\ClienteEmpresa\Exclusao.cshtml" />
+    <Content Include="Views\Contato\Contato.cshtml" />
+    <Content Include="Views\Contato\ListaContato.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
